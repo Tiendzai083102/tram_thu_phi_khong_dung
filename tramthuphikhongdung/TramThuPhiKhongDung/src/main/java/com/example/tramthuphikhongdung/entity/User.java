@@ -1,0 +1,37 @@
+package com.example.tramthuphikhongdung.entity;
+
+import java.sql.Date;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	@Column(nullable = false)
+	private String ten;
+	private Date ngaysinh;
+	@Column(nullable = false, unique = true)
+	private String email;
+	@Column(nullable = false)
+	private String password;
+	private String quequan;
+	private Integer sodu = 0;
+	@Column(nullable = false, unique = true)
+	private String bienso;
+	@Column(nullable = false)
+	private String maubien;
+	@Column(nullable = false, unique = true)
+	private String rfid;
+	@Column(nullable =  false)
+	private boolean isAdmin;
+	
+}
