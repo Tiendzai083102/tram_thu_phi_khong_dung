@@ -13,7 +13,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class QuaTram {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column(nullable = false)
     private Date thoigian;
     @ManyToOne(targetEntity = Goi.class)
