@@ -54,7 +54,7 @@ public class GoiController {
 			goi.setUser(user);
 			Goi goi1 = goiService.addGoi(goi);
 			session.setAttribute("user", goi1.getUser());
-			return new ResponseEntity<Goi> (goiService.addGoi(goi), HttpStatus.OK); 
+			return new ResponseEntity<Goi> (goi1, HttpStatus.OK); 
 		}
 	}
 }

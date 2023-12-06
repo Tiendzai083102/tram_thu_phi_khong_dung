@@ -66,4 +66,13 @@ public class UserServiceImpl implements UserService {
 		user1.setSodu(user.getSodu());
 		return userRepository.save(user1);
 	}
+	@Override
+	public User getUserByRfid(String rfid) {
+		Optional<User> user = userRepository.findByRfid(rfid);
+		if(user.isPresent()) {
+			return user.get();
+		}else {
+			return null;
+		}
+	}
 }
